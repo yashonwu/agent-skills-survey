@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Skills Survey</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --ink: #1f1b16;
+      --muted: #5a4f44;
+      --accent: #a24b2a;
+      --card: #fffaf4;
+      --border: #e4d8c7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, #f1dfc8 0%, transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, #f4e7d6 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      padding: 48px 20px 24px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: 0.02em;
+    }
+    header p {
+      margin: 0;
+      font-size: clamp(18px, 2.2vw, 22px);
+      color: var(--muted);
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin: 24px 0;
+      box-shadow: 0 12px 30px rgba(60, 40, 20, 0.08);
+    }
+    .meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 16px;
+      margin-top: 6px;
+    }
+    a { color: var(--accent); }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 26px;
+    }
+    .figure-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+    }
+    .img-limited {
+      max-width: 480px;
+    }
+    .abstract {
+      text-align: justify;
+    }
+    figure {
+      margin: 0;
+      text-align: center;
+    }
+    figure img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .embed {
+      width: 100%;
+      height: 520px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    pre {
+      background: #1f1b16;
+      color: #f6efe6;
+      padding: 16px;
+      border-radius: 12px;
+      overflow: auto;
+      font-size: 14px;
+    }
+    .note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .embed { height: 360px; }
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 12px 20px 36px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agent Skills Survey</h1>
+    <p>Agent Skills from the Perspective of Procedural Memory: A Survey</p>
+    <div class="meta">
+      <span>Yaxiong Wu, Yongyue Zhang</span>
+      <span><a href="mailto:wuyashon@gmail.com">wuyashon@gmail.com</a></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Abstract</h2>
+      <p class="abstract">
+        As large language model (LLM)-powered autonomous agents increasingly demonstrate strong capabilities in
+        complex real-world tasks, recent research has focused on leveraging skills to endow these agents with
+        domain-specific expertise and adaptive competence. In this survey, we present the first systematic overview
+        of LLM-powered Agent Skills from the perspective of procedural memory, conceptualizing skills as a core form
+        of procedural knowledge that enables agents to internalize, retain, and reuse task-solving procedures through
+        interaction and experience. We comprehensively examine what Agent Skills are, why they are essential for
+        agentic intelligence, and how they can be effectively acquired, represented, invoked, and refined within
+        LLM-based systems. Furthermore, we review representative applications across diverse domains and discuss key
+        challenges and future opportunities in developing and generalizing Agent Skills.
+      </p>
+      <p><strong>Key Words:</strong> Agent Skills, Agentic AI, LLM Agents, Procedural Memory</p>
+      <p><strong>Paper:</strong> <a href="https://www.techrxiv.org/users/1016212/articles/1376445-agent-skills-from-the-perspective-of-procedural-memory-a-survey">TechRxiv Article Page</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Figures & Tables</h2>
+      <div class="figure-list">
+        <figure>
+          <img class="img-limited" src="img_task.png" alt="Agent skills as Procedural Memory">
+        </figure>
+        <figure>
+          <img src="img_agent_skills.png" alt="Agent skills overview">
+        </figure>
+        <figure>
+          <img src="img_anthropic_agent_skills.png" alt="Anthropic agent skills map">
+        </figure>
+        <figure>
+          <img src="tab_agent_skills_implementation.png" alt="Agent skills implementation table">
+        </figure>
+        <figure>
+          <img class="img-limited" src="tab_applications.png" alt="Applications table">
+        </figure>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Slides (PDF Preview)</h2>
+      <object class="embed" data="Agent_Skills_AI_Procedural_Memory.pdf" type="application/pdf">
+        <p>Your browser does not support PDF preview. <a href="Agent_Skills_AI_Procedural_Memory.pdf">Download the PDF</a>.</p>
+      </object>
+      <p class="note">Auto-generated by <a href="https://notebooklm.google/">NotebookLM</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Introduction Video</h2>
+      <video controls preload="metadata">
+        <source src="Agent_Skills__AI_Learns__How-To_.mp4" type="video/mp4">
+        <p>Your browser does not support HTML5 video. <a href="Agent_Skills__AI_Learns__How-To_.mp4">Download the video</a>.</p>
+      </video>
+      <p class="note">Auto-generated by <a href="https://notebooklm.google/">NotebookLM</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>LaTeX Reference</h2>
+      <pre><code>@article{wu2026agentskills,
+  title   = {Agent Skills from the Perspective of Procedural Memory: A Survey},
+  author  = {Wu, Yaxiong and Zhang, Yongyue},
+  journal = {TechRxiv},
+  year    = {2026},
+  month   = {Jan},
+  day     = {16}
+}
+</code></pre>
+    </section>
+  </main>
+  <footer>© 2025 Yaxiong Wu. Created with CodeX.</footer>
+</body>
+</html>
