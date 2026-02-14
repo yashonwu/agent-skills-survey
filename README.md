@@ -51,7 +51,7 @@ disclosure, and runtime invocation.*
 | [PAE](https://arxiv.org/abs/2412.13194) | Task Proposal | Trajectory | - | RL | [GitHub](https://github.com/amazon-science/PAE) |
 | [Bottom-Up Agent](https://arxiv.org/abs/2505.17673) | Exploration | Trajectory | Plan | Update | [GitHub](https://github.com/AngusDujw/Bottom-Up-Agent) |
 | [TAIRA](https://arxiv.org/abs/2506.23485) | Distillation | Thought Pattern | Retrieve | Reflection | [GitHub](https://github.com/Alcein/TAIRA) |
-| [`Mem^p`](https://arxiv.org/abs/2508.06433) | Distillation | Memory | Retrieve | Update | - |
+| [Mem^p](https://arxiv.org/abs/2508.06433) | Distillation | Memory | Retrieve | Update | - |
 | [CER](https://arxiv.org/abs/2506.06698) | Distillation | Memory | Retrieve | Update | - |
 | [ReMe](https://arxiv.org/abs/2512.10696) | Distillation | Memory | Retrieve | Reflection | [GitHub](https://github.com/agentscope-ai/ReMe) |
 | [LEGOMem](https://arxiv.org/abs/2510.04851) | Distillation | Memory | Retrieve | Collective | - |
@@ -65,14 +65,14 @@ disclosure, and runtime invocation.*
 
 | Domain | Method |
 | --- | --- |
-| Household | [SkillAct](https://openreview.net/pdf?id=6LG3cIRrF4), [`Mem^p`](https://arxiv.org/abs/2508.06433) |
+| Household | [SkillAct](https://openreview.net/pdf?id=6LG3cIRrF4), [Mem^p](https://arxiv.org/abs/2508.06433) |
 | Robotics | [ASD](https://arxiv.org/pdf/2405.15019) |
 | Science | [CASCADE](https://arxiv.org/abs/2512.23880) |
 | Coding | [OpenAI Codex](https://developers.openai.com/codex/skills), [Cursor](https://cursor.com/docs/context/skills), [Claude Code](https://code.claude.com/docs/en/skills), [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills), [VS Code](https://code.visualstudio.com/docs/copilot/customization/agent-skills), [SAGE](https://arxiv.org/abs/2512.17102), [ReMe](https://arxiv.org/abs/2512.10696) |
 | Web | [PolySkill](https://arxiv.org/abs/2510.15863), [ASI](https://arxiv.org/abs/2504.06821), [SkillWeaver](https://arxiv.org/abs/2504.07079), [EXIF](https://arxiv.org/abs/2506.04287), [PAE](https://arxiv.org/abs/2412.13194), [CER](https://arxiv.org/abs/2506.06698) |
 | Game | [EXIF](https://arxiv.org/abs/2506.04287), [Bottom-Up Agent](https://arxiv.org/abs/2505.17673), [Voyager](https://arxiv.org/abs/2305.16291) |
 | RecSys | [TAIRA](https://arxiv.org/abs/2506.23485) |
-| Travel | [`Mem^p`](https://arxiv.org/abs/2508.06433) |
+| Travel | [Mem^p](https://arxiv.org/abs/2508.06433) |
 | Office | [LEGOMem](https://arxiv.org/abs/2510.04851) |
 
 *Table: Agent Applications with Agent Skills.*
