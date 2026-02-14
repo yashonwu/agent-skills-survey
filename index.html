@@ -71,6 +71,48 @@
       gap: 18px;
       align-items: center;
     }
+    .image-row {
+      display: flex;
+      gap: 2%;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin-bottom: 8px;
+    }
+    .image-row img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .skills-list {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+    .skills-list li {
+      margin: 8px 0;
+    }
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 840px;
+      font-size: 15px;
+      background: #fffdf9;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3e8d8;
+    }
     .img-half {
       width: 50%;
       max-width: 50%;
@@ -123,12 +165,18 @@
     }
     @media (max-width: 640px) {
       .embed { height: 360px; }
+      .image-row {
+        flex-wrap: wrap;
+      }
     }
     footer {
       text-align: center;
       color: var(--muted);
       padding: 12px 20px 36px;
       font-size: 14px;
+    }
+    .link-row {
+      text-align: center;
     }
   </style>
 </head>
@@ -141,6 +189,12 @@
       <span><a href="mailto:wuyashon@gmail.com">wuyashon@gmail.com</a></span>
     </div>
   </header>
+
+  <p class="link-row">
+  <a href="https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.176857932.25697838">📄 Paper</a> |
+  <a href="https://github.com/yashonwu/agent-skills-survey">🔗 GitHub</a> |
+  <a href="https://yashonwu.github.io/agent-skills-survey/">🌐 Project</a>
+</p>
 
   <main>
     <section class="card">
@@ -157,28 +211,93 @@
         challenges and future opportunities in developing and generalizing Agent Skills.
       </p>
       <p><strong>Key Words:</strong> Agent Skills, Agentic AI, LLM Agents, Procedural Memory</p>
-      <p><strong>Paper:</strong> <a href="https://www.techrxiv.org/users/1016212/articles/1376445-agent-skills-from-the-perspective-of-procedural-memory-a-survey">TechRxiv Article Page</a></p>
     </section>
 
     <section class="card">
-      <h2>Figures & Tables</h2>
-      <div class="figure-list">
-        <figure>
-          <img class="img-half" src="resources/img_task.png" alt="Agent skills as Procedural Memory">
-        </figure>
-        <figure>
-          <img src="resources/img_agent_skills.png" alt="Agent skills overview">
-        </figure>
-        <figure>
-          <img src="resources/img_anthropic_agent_skills.png" alt="Anthropic agent skills map">
-        </figure>
-        <figure>
-          <img src="resources/tab_agent_skills_implementation.png" alt="Agent skills implementation table">
-        </figure>
-        <figure>
-          <img class="img-half" src="resources/tab_applications.png" alt="Applications table">
-        </figure>
+      <h2>Agent Skills for Problem Solving</h2>
+      <div class="image-row">
+        <img src="resources/img_task.png" alt="Agent Skills as Procedural Memory" style="width:31%;">
+        <img src="resources/img_agent_skills.png" alt="Overview of Agent Skills for Problem Solving" style="width:65%;">
       </div>
+      <p class="note">Figure: Agent Skills for Problem Solving.</p>
+      <ul class="skills-list">
+        <li><strong>Skill Acquisition:</strong> Through repeated task interactions, agents convert recurring action patterns into reusable skills that encode experience-driven procedural knowledge.</li>
+        <li><strong>Skill Representation:</strong> Skills are stored as modular, discoverable units of procedural memory with lightweight metadata, exposing details only when needed.</li>
+        <li><strong>Skill Invocation:</strong> When a task fits a skill's scope, the agent retrieves and executes that skill (or related tools) to run complex workflows reliably.</li>
+        <li><strong>Skill Refinement:</strong> Skills are continuously updated from outcomes and feedback to fix errors, improve efficiency, and adapt to new contexts.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Anthropic Agent Skills</h2>
+      <figure>
+        <img src="resources/img_anthropic_agent_skills.png" alt="Anthropic Agent Skills">
+        <figcaption>A systematic implementation of Anthropic Agent Skills, illustrating skill organization, progressive disclosure, and runtime invocation.</figcaption>
+      </figure>
+    </section>
+
+    <section class="card">
+      <h2>Agent Skills Implementation</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Acquisition</th>
+              <th>Representation</th>
+              <th>Invocation</th>
+              <th>Refinement</th>
+              <th>Resource Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Agent Skills</a></td><td>Manual</td><td>File+Code</td><td>Match</td><td>Static</td><td><a href="https://github.com/agentskills/agentskills">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2305.16291">Voyager</a></td><td>Exploration</td><td>Program</td><td>Retrieve</td><td>Self-Reflection</td><td><a href="https://voyager.minedojo.org/">Website</a></td></tr>
+            <tr><td><a href="https://openreview.net/pdf?id=6LG3cIRrF4">SkillAct</a></td><td>Demonstration</td><td>Prompt</td><td>Plan</td><td>Static</td><td>-</td></tr>
+            <tr><td><a href="https://arxiv.org/pdf/2405.15019">ASD</a></td><td>Task Proposal</td><td>Policy</td><td>Plan+Chain</td><td>RL</td><td><a href="https://github.com/xf-zhao/Agentic-Skill-Discovery">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2512.23880">CASCADE</a></td><td>Puzzle Solving</td><td>Program</td><td>Retrieve</td><td>Self-Reflection</td><td><a href="https://github.com/CederGroupHub/CASCADE">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2512.17102">SAGE</a></td><td>Task Solving</td><td>Program</td><td>Retrieve</td><td>RL</td><td>-</td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2510.15863">PolySkill</a></td><td>Self-Exploration</td><td>Program</td><td>Call+Chain</td><td>Continual Learning</td><td>-</td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2504.06821">ASI</a></td><td>Task Solving</td><td>Program</td><td>Call</td><td>Update</td><td><a href="https://github.com/zorazrw/agent-skill-induction">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2504.07079">SkillWeaver</a></td><td>Exploration</td><td>API</td><td>Call</td><td>Collective</td><td><a href="https://github.com/OSU-NLP-Group/SkillWeaver">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2506.04287">EXIF</a></td><td>Exploration</td><td>Trajectory</td><td>-</td><td>Iterative Feedback</td><td>-</td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2412.13194">PAE</a></td><td>Task Proposal</td><td>Trajectory</td><td>-</td><td>RL</td><td><a href="https://github.com/amazon-science/PAE">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2505.17673">Bottom-Up Agent</a></td><td>Exploration</td><td>Trajectory</td><td>Plan</td><td>Update</td><td><a href="https://github.com/AngusDujw/Bottom-Up-Agent">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2506.23485">TAIRA</a></td><td>Distillation</td><td>Thought Pattern</td><td>Retrieve</td><td>Reflection</td><td><a href="https://github.com/Alcein/TAIRA">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2508.06433">Mem^p</a></td><td>Distillation</td><td>Memory</td><td>Retrieve</td><td>Update</td><td>-</td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2506.06698">CER</a></td><td>Distillation</td><td>Memory</td><td>Retrieve</td><td>Update</td><td>-</td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2512.10696">ReMe</a></td><td>Distillation</td><td>Memory</td><td>Retrieve</td><td>Reflection</td><td><a href="https://github.com/agentscope-ai/ReMe">GitHub</a></td></tr>
+            <tr><td><a href="https://arxiv.org/abs/2510.04851">LEGOMem</a></td><td>Distillation</td><td>Memory</td><td>Retrieve</td><td>Collective</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Table: Summarization of representative Agent Skills implementations.</p>
+    </section>
+
+    <section class="card">
+      <h2>Agent Applications with Agent Skills</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>Method</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Household</td><td><a href="https://openreview.net/pdf?id=6LG3cIRrF4">SkillAct</a>, <a href="https://arxiv.org/abs/2508.06433">Mem^p</a></td></tr>
+            <tr><td>Robotics</td><td><a href="https://arxiv.org/pdf/2405.15019">ASD</a></td></tr>
+            <tr><td>Science</td><td><a href="https://arxiv.org/abs/2512.23880">CASCADE</a></td></tr>
+            <tr><td>Coding</td><td><a href="https://developers.openai.com/codex/skills">OpenAI Codex</a>, <a href="https://cursor.com/docs/context/skills">Cursor</a>, <a href="https://code.claude.com/docs/en/skills">Claude Code</a>, <a href="https://docs.github.com/en/copilot/concepts/agents/about-agent-skills">GitHub Copilot</a>, <a href="https://code.visualstudio.com/docs/copilot/customization/agent-skills">VS Code</a>, <a href="https://arxiv.org/abs/2512.17102">SAGE</a>, <a href="https://arxiv.org/abs/2512.10696">ReMe</a></td></tr>
+            <tr><td>Web</td><td><a href="https://arxiv.org/abs/2510.15863">PolySkill</a>, <a href="https://arxiv.org/abs/2504.06821">ASI</a>, <a href="https://arxiv.org/abs/2504.07079">SkillWeaver</a>, <a href="https://arxiv.org/abs/2506.04287">EXIF</a>, <a href="https://arxiv.org/abs/2412.13194">PAE</a>, <a href="https://arxiv.org/abs/2506.06698">CER</a></td></tr>
+            <tr><td>Game</td><td><a href="https://arxiv.org/abs/2506.04287">EXIF</a>, <a href="https://arxiv.org/abs/2505.17673">Bottom-Up Agent</a>, <a href="https://arxiv.org/abs/2305.16291">Voyager</a></td></tr>
+            <tr><td>RecSys</td><td><a href="https://arxiv.org/abs/2506.23485">TAIRA</a></td></tr>
+            <tr><td>Travel</td><td><a href="https://arxiv.org/abs/2508.06433">Mem^p</a></td></tr>
+            <tr><td>Office</td><td><a href="https://arxiv.org/abs/2510.04851">LEGOMem</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Table: Agent Applications with Agent Skills.</p>
     </section>
 
     <section class="card">

@@ -58,9 +58,6 @@ disclosure, and runtime invocation.*
 
 *Table: Summarization of representative Agent Skills implementations.*
 
-
-
-
 ## Agent Applications with Agent Skills
 
 | Domain | Method |
